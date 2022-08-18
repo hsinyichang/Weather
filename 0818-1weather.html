@@ -164,24 +164,27 @@
                             <td>${data[i].locationName}</td>
                                                         
                             <td>
-                                ${data[i]['weatherElement'][0].time[0].parameter.parameterName}
+                                ${data[i]['weatherElement'][0].time[0].parameter.parameterName}<br>
                                 ${data[i]['weatherElement'][2].time[0].parameter.parameterName} -
-                                ${data[i]['weatherElement'][1].time[0].parameter.parameterName} 
+                                ${data[i]['weatherElement'][4].time[0].parameter.parameterName}
+                                &deg;C 
                                 <img src="./img/${iconText0}/${data[i]['weatherElement'][0].time[0].parameter.parameterValue}.svg" alt="">
                             </td>
 
                             <td>
-                                ${data[i]['weatherElement'][0].time[1].parameter.parameterName}
+                                ${data[i]['weatherElement'][0].time[1].parameter.parameterName}<br>
                                 ${data[i]['weatherElement'][2].time[1].parameter.parameterName} -
-                                ${data[i]['weatherElement'][1].time[1].parameter.parameterName} 
+                                ${data[i]['weatherElement'][4].time[1].parameter.parameterName}
+                                &deg;C  
                                 <img src="./img/${iconText1}/${data[i]['weatherElement'][0].time[1].parameter.parameterValue}.svg" alt="">
                             </td>
 
                             
                             <td>
-                                ${data[i]['weatherElement'][0].time[2].parameter.parameterName}
+                                ${data[i]['weatherElement'][0].time[2].parameter.parameterName}<br>
                                 ${data[i]['weatherElement'][2].time[2].parameter.parameterName} -
-                                ${data[i]['weatherElement'][1].time[2].parameter.parameterName} 
+                                ${data[i]['weatherElement'][4].time[2].parameter.parameterName}
+                                &deg;C  
                                 <img src="./img/${iconText2}/${data[i]['weatherElement'][0].time[2].parameter.parameterValue}.svg" alt="">
                             </td>
                         </tr>
