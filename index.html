@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>全台36小時天氣資訊</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="./img/favicon.png" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet"><script src="./assets/js/weather.js"></script>
+  <!-- datatable -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+  <link href="./img/favicon.png" rel="icon">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+  </script>
+</head>
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top header-transparent">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1 class="text-light"><a href="index.html"><span><img src="./img/favicon.png">　全台天氣資訊</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li class="dropdown"><a href="#"><span>北部地區</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#about" class="a1">新北市</a></li>
+              <li><a href="#about" class="a2">臺北市</a></li>
+              <li><a href="#about" class="a3">桃園市</a></li>
+              <li><a href="#about" class="a4">宜蘭縣</a></li>
+              <li><a href="#about" class="a5">基隆市</a></li>
+              <li><a href="#about" class="a6">新竹縣市</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>中部地區</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#about" class="b1">臺中市</a></li>
+              <li><a href="#about" class="b2">南投縣</a></li>
+              <li><a href="#about" class="b3">彰化縣</a></li>
+              <li><a href="#about" class="b4">苗栗縣</a></li>
+              <li><a href="#about" class="b5">雲林縣</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>南部地區</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#about" class="c1">嘉義縣市</a></li>
+              <li><a href="#about" class="c2">臺南市</a></li>
+              <li><a href="#about" class="c3">高雄市</a></li>
+              <li><a href="#about" class="c4">屏東縣</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>花東、外島地區</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#about" class="d1">花蓮縣</a></li>
+              <li><a href="#about" class="d2">台東縣</a></li>
+              <li><a href="#about" class="d3">澎湖縣</a></li>
+              <li><a href="#about" class="d4">金門縣</a></li>
+              <li><a href="#about" class="d5">連江縣</a></li>
+
+            </ul>
+          </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container" data-aos="fade-up">
+      <h1>全台３６小時天氣資訊</h1>
+      <h2>Taiwan weather information in 36 hours</h2>
+      <a href="#about" class="btn-get-started scrollto"><i class="bx bx-chevrons-down"></i></a>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container mt-3">    
+
+    <!-- 2.container table table-striped -->
+    <div class="container-fulid">
+        <table id="table" class="table table-primary table-striped table-hover">
+            <thead>
+                <!-- 總共36小時 =>  12 / 12 /12 -->
+                <!-- 最低溫度minT -->
+                <!-- 最高溫度maxT -->
+                <!-- 總共36小時 =>  time[0] / time[1] /time[2] -->
+                <tr>
+                    <th>ID</th>
+                    <th>縣市</th>
+                    <th>時間一</th>
+                    <th>時間二</th>
+                    <th>時間三</th>
+                </tr>
+                <!-- <tr>
+                    <td>1</td>
+                    <td>嘉義市</td>
+                    <td>
+                        天氣現象
+                        <img src="./img/day/18.svg" alt="">
+                    </td>
+                    <td>最低溫度</td>
+                    <td>降雨機率</td>
+                </tr> -->
+
+               </thead>
+               <tbody>
+
+               </tbody>
+        </table>
+    </div>
+</div>
+
+    <!-- datatable js cdn.js -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js">
+    </script>
+
+    <script src="./myToken/url.js"></script>
+
+    <!-- .gitignore 這個目錄指定的檔案或資料夾不上傳到github -->
+
+    <script>
+        // 加入判斷
+        // 判斷白天或晚上 day / night
+
+        // 0 night
+        // 6 day
+        // 12 day
+        // 18 night
+
+        const hourArr = [];
+        hourArr[0] = '凌晨';
+        hourArr[6] = '白天';
+        hourArr[12] = '下午';
+        hourArr[18] = '晚上';
+        console.log('hourArr', hourArr);
+
+
+
+        // ajax
+        $.ajax({
+            dataType: 'json',
+            url: url,
+            // data: 
+            success: function (result) {
+                // console.log('result',result);
+                // console.log(result.records.location);
+
+                let data = result.records.location;
+                console.log('data', data);
+
+                const time0 = new Date(data[0].weatherElement[0].time[0].startTime);
+                const time1 = new Date(data[0].weatherElement[0].time[1].startTime);
+                const time2 = new Date(data[0].weatherElement[0].time[2].startTime);
+
+                console.log('time0', time0);
+                console.log('time1', time1);
+                console.log('time2', time2);
+
+
+                let timeText0 =time0.getFullYear()+" / "+(time0.getMonth()+1)+" / "+time0.getDate()+'　　　　　'+time0.getHours()+"時-"+time1.getHours()+"時";
+                let timeText1 =time1.getFullYear()+" / "+(time1.getMonth()+1)+" / "+time1.getDate()+'　　　　　'+time1.getHours()+"-隔日"+time2.getHours()+"時"
+                let timeText2 =time2.getFullYear()+" / "+(time2.getMonth()+1)+" / "+time2.getDate()+'　　　　　'+time2.getHours()+"時-"+time1.getHours()+"時"
+                console.log('timeText0',timeText0);
+                console.log('timeText1',timeText1);
+                console.log('timeText2',timeText2);
+
+                $('tr>th').eq(2).text(timeText0);
+                $('tr>th').eq(3).text(timeText1);
+                $('tr>th').eq(4).text(timeText2);
+
+                const iconText0 = (time0.getHours() == 6 || time0.getHours() == 12 ) ? 'day' : 'night';
+                const iconText1 = (time1.getHours() == 6 || time1.getHours() == 12 ) ? 'day' : 'night';
+                const iconText2 = (time2.getHours() == 6 || time2.getHours() == 12 ) ? 'day' : 'night';
+                console.log('iconText0',iconText0); //day
+                console.log('iconText1',iconText1); //night
+                console.log('iconText2',iconText2); //day
+
+
+                // ['weatherElement'][0] //Wx
+                // ['weatherElement'][2] //minT
+                // ['weatherElement'][1] //PoP
+                // Wx 天氣現象
+                // MaxT 最高溫度
+                // MinT 最低溫度
+                // CI 舒適度
+                // PoP 降雨機率
+
+                console.log('data[0]', data[0]['weatherElement']);
+                console.log('data[0]', data[0]['weatherElement'][0].time[0].parameter.parameterName);
+                console.log('data[0]', data[0]['weatherElement'][2].time[0].parameter.parameterName);
+                console.log('data[0]', data[0]['weatherElement'][1].time[0].parameter.parameterName);
+
+                // 2.複雜完整案例說明
+                for (let i = 0; i < data.length; i++) {
+                    $('tbody').append(`
+                        <tr>
+                            <td>${i+1}</td>
+                            <td>${data[i].locationName}</td>
+                                                        
+                            <td>
+                                ${data[i]['weatherElement'][0].time[0].parameter.parameterName}<br>
+                                <strong>${data[i]['weatherElement'][2].time[0].parameter.parameterName} -
+                                ${data[i]['weatherElement'][4].time[0].parameter.parameterName}</strong>
+                                &deg;C 
+                                <img class="img" src="./img/${iconText0}/${data[i]['weatherElement'][0].time[0].parameter.parameterValue}.svg" width="80px">
+                            </td>
+
+                            <td>
+                                ${data[i]['weatherElement'][0].time[1].parameter.parameterName}<br>
+                                <strong>${data[i]['weatherElement'][2].time[1].parameter.parameterName} -
+                                ${data[i]['weatherElement'][4].time[1].parameter.parameterName}</strong>
+                                &deg;C  
+                                <img class="img" src="./img/${iconText1}/${data[i]['weatherElement'][0].time[1].parameter.parameterValue}.svg" width="80px">
+                            </td>
+
+                            
+                            <td>
+                                ${data[i]['weatherElement'][0].time[2].parameter.parameterName}<br>
+                                <strong>${data[i]['weatherElement'][2].time[2].parameter.parameterName} -
+                                ${data[i]['weatherElement'][4].time[2].parameter.parameterName}</strong>
+                                &deg;C  
+                                <img class="img" src="./img/${iconText2}/${data[i]['weatherElement'][0].time[2].parameter.parameterValue}.svg" width="80px">
+                            </td>
+                        </tr>
+                    `);
+                }
+
+
+                // 1.簡單說明
+                // tobody 最後一行加入
+                // for (let i = 0; i < data.length; i++) {
+                //     $('tbody').append(`
+                //         <tr>
+                //             <td>${i+1}</td>
+                //             <td>${data[i].locationName}</td>
+                                                        
+                //             <td>
+                //                 ${data[i]['weatherElement'][0].time[0].parameter.parameterName}
+                //                 <img src="./img/day/${data[i]['weatherElement'][0].time[0].parameter.parameterValue}.svg" alt="">
+                //             </td>
+
+                //             <td>${data[i]['weatherElement'][2].time[0].parameter.parameterName}</td>
+
+
+                //             <td>${data[i]['weatherElement'][1].time[0].parameter.parameterName}</td>
+                //         </tr>
+                //     `);
+                // }
+
+
+                  $("#table").DataTable();
+
+            }
+        })
+    </script>
+
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        2022　&copy; Copyright <strong><span>HsinYi</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/ -->
+        Designed by <a target="_blank" href="http://220.128.133.15/s1110210">HsinYi</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/weather.js"></script>
+
+</body>
+
+</html>
